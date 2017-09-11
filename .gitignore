@@ -1,0 +1,6 @@
+node_modules/*
+bower_components/*
+src/*
+Gruntfile.js
+bower.json
+package.json
