@@ -4,37 +4,38 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Transavia Verhalenwebsite -- Log in</title>
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 	<header>
-		<h1>Transavia Verhalenwebsite -- Login</h1>
+		<div>
+			<h1>Transavia Verhalenwebsite</h1>
 
-		<nav>
-			<ul>
-				<li><a href="index.html">Feed</a></li>
-				<li><a href="#">Mijn verhalen</a></li>
-				<li><a href="#">Log in</a></li>
-			</ul>
-		</nav>
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="#">Mijn verhalen</a></li>
+					<li><a href="#">Account</a></li>
+				</ul>
+			</nav>
+		</div>
 
 	</header>
-
-	<section>
+	<main>
 		<h2>Log in</h2>
 		<form action="index.html">
 			<fieldset>
 				<legend>Accountgegevens</legend>
 				<label for="input-naam">Accountnaam:</label>
-				<input type="text" id="input-naam">
+				<input type="text" id="input-naam" placeholder="accountnaam">
 				<label for="input-wachtwoord">Wachtwoord:</label>
-				<input type="password" id="input-wachtwoord">
+				<input type="password" id="input-wachtwoord" placeholder="wachtwoord">
 			</fieldset>
 			<input type="submit" value="Log in">
-			
+
 		</form>
 		<a href="register.html">Nog geen account? Registreer</a>
-		
-	</section>
-	
+	</main>
+
 </body>
 </html>

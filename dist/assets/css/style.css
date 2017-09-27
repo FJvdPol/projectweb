@@ -1,0 +1,224 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body > section {
+  max-width: 78.75rem;
+  margin: 0 auto; }
+
+@font-face {
+  font-family: "NexaBold";
+  src: url("../fonts/NexaBold.otf") format("opentype"); }
+
+@font-face {
+  font-family: "NexaLight";
+  src: url("../fonts/NexaLight.otf") format("opentype"); }
+
+body {
+  font-family: "NexaLight";
+  font-size: 1em;
+  color: #202020; }
+
+a {
+  text-decoration: none;
+  color: #2800a0;
+  transition: all 0.1s;
+  outline: none; }
+  a:hover, a:focus {
+    color: #ff3268; }
+
+* {
+  font-family: inherit;
+  font-size: inherit; }
+
+h1, h2, h3 {
+  font-family: "NexaBold"; }
+
+h2 {
+  font-size: 3em;
+  color: #00d66c;
+  line-height: 1.5em;
+  margin-bottom: 1rem; }
+
+h3 {
+  font-size: 1.25em;
+  color: #2800a0;
+  line-height: 1.625em;
+  margin-bottom: 0.5rem; }
+
+h4 {
+  font-family: "NexaLight";
+  font-size: 1em;
+  color: #202020;
+  line-height: 1.25em;
+  margin-bottom: 0.5em; }
+
+body > header {
+  background-color: #fff;
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2; }
+  body > header h1 {
+    font-size: 1.25rem;
+    color: #00d66c; }
+    body > header h1:hover {
+      color: #2800a0; }
+  body > header nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; }
+    body > header nav ul li {
+      margin: 0 0.5rem; }
+      body > header nav ul li a {
+        color: #00d66c; }
+        body > header nav ul li a:hover {
+          color: #2800a0; }
+  body > header div {
+    max-width: 78.75rem;
+    padding: 0.6rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; }
+
+body {
+  background-color: #fff; }
+
+body > form {
+  background: url("../images/boeken_strand.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 20rem;
+  max-width: none;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  body > form fieldset > div {
+    max-width: 78.75rem;
+    display: flex; }
+  body > form fieldset legend {
+    padding-bottom: 0;
+    text-align: center; }
+  body > form input, body > form label, body > form select {
+    border-radius: 0;
+    width: auto;
+    border-left: none;
+    padding: 1rem;
+    border-right: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 -0.1875rem 0.0625rem #91a3b7; }
+  body > form select:focus {
+    border-color: #2800a0;
+    border: 1px solid #2800a0; }
+  body > form label + input {
+    margin: 0; }
+  body > form input:first-of-type {
+    border-radius: 0.75rem 0 0 0.75rem;
+    border-left: 1px solid #91a3b7; }
+  body > form input[type="submit"] {
+    background-color: #ff3268;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
+    border-radius: 0 0.75rem 0.75rem 0; }
+    body > form input[type="submit"]:focus {
+      background-color: #ff658e;
+      border-color: #ff658e;
+      border-bottom-color: #ca2b55; }
+    body > form input[type="submit"]:hover {
+      background-color: #ff658e; }
+  body > form input:focus {
+    border-color: #2800a0;
+    border: 1px solid #2800a0; }
+
+article {
+  margin: 4rem auto;
+  padding: 3rem;
+  max-width: 42rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ccc;
+  border-radius: 0.75rem; }
+  article:first-of-type {
+    margin-top: 0; }
+
+main {
+  max-width: 78.75rem;
+  margin: 0 auto;
+  padding-top: 4rem; }
+
+main > section {
+  padding: 1rem; }
+
+main > h2 {
+  display: block;
+  padding: 1rem;
+  max-width: 44rem;
+  margin: 0 auto; }
+
+form {
+  max-width: 30rem;
+  margin-bottom: 3rem; }
+  form fieldset {
+    outline: none;
+    border: none;
+    appearance: none; }
+    form fieldset legend {
+      display: block;
+      color: #2800a0;
+      font-family: "NexaBold";
+      font-size: 1.25em;
+      padding-bottom: 1rem; }
+  form input, form label, form select {
+    display: block;
+    border: 1px solid #91a3b7;
+    background-color: #fff;
+    padding: 0.75rem;
+    outline: none;
+    appearance: none;
+    width: 100%;
+    border-radius: 0.5rem; }
+  form label + input {
+    margin-bottom: 1rem; }
+  form select {
+    cursor: pointer; }
+    form select:focus {
+      border: 1px solid #2800a0; }
+  form input[type="submit"] {
+    width: auto;
+    margin: 0 auto;
+    padding: 0.4375em 1.5em 0.5625em;
+    font-family: "NexaBold";
+    background-color: #ff3268;
+    color: white;
+    border-color: #ff3268;
+    border-right: 1px solid #ff3268;
+    border-bottom: 1px solid #ca2b55;
+    border-radius: 1.25em;
+    box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
+    cursor: pointer; }
+    form input[type="submit"]:hover, form input[type="submit"]:focus {
+      background-color: #ff658e;
+      border-color: #ff658e;
+      border-bottom-color: #ca2b55; }
+  form input:focus {
+    border: 1px solid #2800a0; }
+  form label {
+    /* Hide content from vision but accesible for screenreader, src: https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/*/
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0; }
+
+form + a {
+  display: block;
+  max-width: 30rem;
+  text-align: center; }
