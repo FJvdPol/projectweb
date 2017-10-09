@@ -10,7 +10,7 @@ html {
   padding: 0; }
 
 body > section {
-  max-width: 78.75rem;
+  max-width: 90rem;
   margin: 0 auto; }
 
 @font-face {
@@ -60,105 +60,199 @@ h4 {
   line-height: 1.25em;
   margin-bottom: 0.5em; }
 
-body > header {
+header {
   background-color: #fff;
   box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 2; }
-  body > header h1 {
+  z-index: 2;
+  padding: 0.6rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  height: 3rem; }
+  header form {
+    flex-grow: 1;
+    position: relative;
+    margin-bottom: 0; }
+    header form fieldset {
+      padding: 0; }
+      header form fieldset legend {
+        padding: 0;
+        margin: 0;
+        color: transparent;
+        max-height: 0; }
+    header form label + input {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 10rem;
+      margin-bottom: 0;
+      padding: 0.25rem 0.5rem;
+      transition: all 250ms; }
+      header form label + input:focus {
+        width: 20rem; }
+  header h1 {
     font-size: 1.25rem;
     color: #00d66c; }
-    body > header h1:hover {
+    header h1:hover {
       color: #2800a0; }
-  body > header nav ul {
+  header nav ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap; }
-    body > header nav ul li {
+    header nav ul li {
       margin: 0 0.5rem; }
-      body > header nav ul li a {
+      header nav ul li a {
+        font-size: 1.25rem;
+        font-family: "NexaBold";
         color: #00d66c; }
-        body > header nav ul li a:hover {
+        header nav ul li a:hover {
           color: #2800a0; }
-  body > header div {
-    max-width: 78.75rem;
-    padding: 0.6rem;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between; }
 
 body {
   background-color: #fff; }
-
-body > form {
-  background: url("../images/boeken_strand.jpg") no-repeat center;
-  background-size: cover;
-  min-height: 20rem;
-  max-width: none;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  body > form fieldset > div {
-    max-width: 78.75rem;
-    display: flex; }
-  body > form fieldset legend {
-    padding-bottom: 0;
-    text-align: center; }
-  body > form input, body > form label, body > form select {
-    border-radius: 0;
-    width: auto;
-    border-left: none;
-    padding: 1rem;
-    border-right: none;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: inset 0 -0.1875rem 0.0625rem #91a3b7; }
-  body > form select:focus {
-    border-color: #2800a0;
-    border: 1px solid #2800a0; }
-  body > form label + input {
-    margin: 0; }
-  body > form input:first-of-type {
-    border-radius: 0.75rem 0 0 0.75rem;
-    border-left: 1px solid #91a3b7; }
-  body > form input[type="submit"] {
-    background-color: #ff3268;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
-    border-radius: 0 0.75rem 0.75rem 0; }
-    body > form input[type="submit"]:focus {
-      background-color: #ff658e;
-      border-color: #ff658e;
-      border-bottom-color: #ca2b55; }
-    body > form input[type="submit"]:hover {
-      background-color: #ff658e; }
-  body > form input:focus {
-    border-color: #2800a0;
-    border: 1px solid #2800a0; }
-
-article {
-  margin: 4rem auto;
-  padding: 3rem;
-  max-width: 42rem;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid #ccc;
-  border-radius: 0.75rem; }
-  article:first-of-type {
-    margin-top: 0; }
+  body > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("../images/link-hoang-31747.jpg") no-repeat center;
+    background-size: cover; }
+    @media (min-width: 52rem) {
+      body > div {
+        flex-direction: row;
+        min-height: 70vh; } }
+    body > div section {
+      border-radius: 0.75rem;
+      width: 40%;
+      margin: 2rem;
+      background-color: #fff;
+      max-width: 25rem; }
+      body > div section:nth-of-type(2) h2 {
+        background-color: #2800a0; }
+      @media (max-width: 52rem) {
+        body > div section {
+          width: 80%; } }
+    body > div div {
+      max-width: calc(100% - 2rem);
+      margin: 0 auto;
+      display: flex;
+      overflow-y: scroll;
+      padding-bottom: 1rem; }
+    body > div article {
+      margin: 0 1rem;
+      min-width: 15rem;
+      max-width: 15rem; }
+      body > div article:first-of-type {
+        margin-left: 0; }
+      body > div article:last-of-type {
+        margin-right: 0; }
+      body > div article img {
+        width: 100%; }
+    body > div h2 {
+      padding: 1rem;
+      display: block;
+      background-color: #00d66c;
+      color: #fff;
+      font-size: 1.5rem;
+      white-space: nowrap;
+      border-radius: 0.75rem 0.75rem 0 0; }
 
 main {
-  max-width: 78.75rem;
+  padding: 3rem; }
+
+div + main {
+  max-width: 90rem;
   margin: 0 auto;
-  padding-top: 4rem; }
-
-main > section {
-  padding: 1rem; }
-
-main > h2 {
-  display: block;
-  padding: 1rem;
-  max-width: 44rem;
-  margin: 0 auto; }
+  padding: 0;
+  padding-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center; }
+  @media (min-width: 52rem) {
+    div + main {
+      padding: 2rem;
+      padding-top: 6rem;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2rem; }
+      div + main > div {
+        grid-column: span 2; } }
+  @media (min-width: 77rem) {
+    div + main {
+      padding: 2rem;
+      padding-top: 10rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem; }
+      div + main > div {
+        grid-column: span 3; } }
+  div + main > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 1rem; }
+    @media (min-width: 52rem) {
+      div + main > div {
+        padding: 0; } }
+  div + main h2 {
+    margin-bottom: 0; }
+    @media (min-width: 52rem) {
+      div + main h2 {
+        padding-left: 0; } }
+  div + main form {
+    margin: 0; }
+    div + main form fieldset legend {
+      margin: 0;
+      padding: 0;
+      max-height: 0;
+      color: transparent; }
+  div + main section {
+    padding: 1rem; }
+  div + main article {
+    max-width: 43rem;
+    justify-self: center;
+    min-width: 23rem;
+    padding-bottom: 7rem; }
+    div + main article:nth-of-type(even) {
+      background-color: #f7f7f7; }
+    div + main article img {
+      width: 100%; }
+    div + main article footer, div + main article p, div + main article h3, div + main article a {
+      padding: 0 1.5rem; }
+    div + main article ul {
+      display: flex;
+      list-style-type: none;
+      padding: 0 1.5rem;
+      justify-content: space-between; }
+      div + main article ul li {
+        padding: 1rem 0;
+        min-width: 2.5rem; }
+    div + main article a {
+      background-color: #ff3268;
+      display: table;
+      margin: 1rem auto 0;
+      padding: 0.75rem 1.25rem;
+      border-radius: 2rem;
+      color: #fff;
+      font-family: "NexaBold";
+      max-width: 80%;
+      transition: all 250ms;
+      box-shadow: inset 0 -0.1875em 0.0625em #ca2b55; }
+      div + main article a:hover {
+        color: #00d66c;
+        background-color: #ff658e; }
+      div + main article a:visited {
+        color: #fff; }
+    @media (min-width: 52rem) {
+      div + main article {
+        padding-bottom: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #ccc;
+        border-radius: 0.75rem; }
+        div + main article img {
+          border-radius: 0.75rem 0.75rem 0 0; } }
 
 form {
   max-width: 30rem;
