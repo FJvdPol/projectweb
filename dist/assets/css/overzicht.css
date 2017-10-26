@@ -1,0 +1,282 @@
+body>div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+    background: url("../images/link-hoang-31747.jpg") no-repeat center;
+    background-size: cover;
+}
+
+@media (min-width: 52rem) {
+    body>div {
+        flex-direction: row;
+        min-height: calc(70vh + 2.75rem);
+    }
+}
+
+body>div::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2.75rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-position: center bottom;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204096%2044%22%20width%3D%224096%22%20height%3D%2244%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M2137%2C0l-76%2C39c-3.653%2C2.164-8.445%2C4-13%2C4s-9.347-1.836-13-4l-76-39H0v45h4096V0H2137z%22%2F%3E%3Cpath%20fill%3D%22transparent%22%20d%3D%22M2137%2C0l-76%2C39c-3.653%2C2.164-8.445%2C4-13%2C4s-9.347-1.836-13-4l-76-39H2137z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+body>div section {
+    border-radius: 0.75rem;
+    width: 40%;
+    margin: 2rem;
+    max-width: 25rem;
+    background-color: var(--color-main);
+}
+
+body>div section:nth-of-type(2) {
+    background-color: var(--color-secondary);
+}
+
+@media (max-width: 52rem) {
+    body>div section {
+        width: 80%;
+    }
+}
+
+body>div div {
+    max-width: calc(100% - 2rem);
+    margin: 0 auto;
+    display: flex;
+    overflow-y: scroll;
+    padding-bottom: 1rem;
+}
+
+body>div article {
+    margin: 0 1rem;
+    min-width: 15rem;
+    max-width: 15rem;
+}
+
+body>div article:first-of-type {
+    margin-left: 0;
+}
+
+body>div article:last-of-type {
+    margin-right: 0;
+}
+
+body>div article img {
+    width: 100%;
+}
+
+body>div h2 {
+    padding: 1rem;
+    display: block;
+    color: #fff;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    border-radius: 0.75rem 0.75rem 0 0;
+}
+
+body>div h3 {
+    color: #fff;
+}
+
+main section {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 4rem 0 6rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+
+@media (min-width: 52rem) {
+    main section {
+        padding: 4rem 2rem 6rem;
+        padding-top: 6rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2rem;
+    }
+    main section>div {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 77rem) {
+    main section {
+        padding: 4rem 2rem 6rem;
+        padding-top: 10rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+    }
+    main section>div {
+        grid-column: span 3;
+    }
+}
+
+main section>div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+@media (min-width: 52rem) {
+    main section>div {
+        padding: 0;
+    }
+}
+
+main section h2 {
+    margin-bottom: 0;
+}
+
+@media (min-width: 52rem) {
+    main section h2 {
+        padding-left: 0;
+    }
+}
+
+main section form {
+    margin: 0;
+}
+
+main section form fieldset legend {
+    margin: 0;
+    padding: 0;
+    max-height: 0;
+    color: transparent;
+}
+
+main section form fieldset label {
+    /* Hide content from vision but accesible for screenreader, src: https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/*/
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+main section section {
+    padding: 1rem;
+}
+
+main section article {
+    max-width: 43rem;
+    justify-self: center;
+    padding-bottom: 7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+main section article:nth-of-type(even) {
+    background-color: #f7f7f7;
+}
+
+main section article img {
+    width: 100%;
+}
+
+main section article footer, main section article p, main section article h3, main section article a {
+    padding: 0 1.5rem;
+}
+
+main section article p {
+    margin-bottom: 1rem;
+}
+
+main section article ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0 1.5rem;
+    justify-content: space-between;
+}
+
+main section article ul li {
+    padding: 1rem 0;
+    min-width: 2.5rem;
+}
+
+main section article a {
+    background-color: var(--color-accent);
+    display: table;
+    margin: 0 auto;
+    margin-top: auto;
+    padding: 0.75rem 1.25rem;
+    border-radius: 2rem;
+    color: #fff;
+    font-family: var(--font-family-bold);
+    max-width: 80%;
+    transition: all 250ms;
+    box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
+}
+
+main section article a:hover {
+    color: var(--color-main);
+    background-color: #ff658e;
+}
+
+main section article a:visited {
+    color: #fff;
+}
+
+@media (min-width: 52rem) {
+    main section article {
+        padding-bottom: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #ccc;
+        border-radius: 0.75rem;
+        min-width: 23rem;
+    }
+    main section article img {
+        border-radius: 0.75rem 0.75rem 0 0;
+    }
+}
+
+body>footer {
+    background-color: #f7f7f7;
+    color: #909090;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 1.5rem;
+}
+
+body>footer * {
+    color: inherit;
+}
+
+form {
+    max-width: 30rem;
+    margin-bottom: 3rem;
+}
+
+form fieldset {
+    outline: none;
+    border: none;
+    appearance: none;
+}
+
+form fieldset legend {
+    display: block;
+    color: var(--color-secondary);
+    font-family: var(--font-family-bold);
+    font-size: 1.25em;
+    padding-bottom: 1rem;
+}
+
+form label {
+    display: block;
+    color: var(--color-main-text);
+    font-family: var(--font-family-bold);
+    margin-bottom: 0.3rem;
+    font-size: 1em;
+}

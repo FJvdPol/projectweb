@@ -5,36 +5,59 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Transavia Verhalenwebsite -- Log in</title>
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
 	<header>
-		<div>
-			<h1>Transavia Verhalenwebsite</h1>
-
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#">Mijn verhalen</a></li>
-					<li><a href="#">Account</a></li>
-				</ul>
-			</nav>
-		</div>
-
+		<h1>Verhalen</h1>
+		<nav>
+			<ul>
+				<li>
+					<form action="">
+						<fieldset>
+							<legend>Zoeken</legend>
+							<label for="searchfield">zoeken</label>
+							<input id="searchfield" type="text" placeholder="Zoeken...">
+						</fieldset>
+					</form>
+				</li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Mijn verhalen</a></li>
+				<li><a href="#">Account</a></li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li>
+					<a href=""><img src="https://unsplash.it/50/50" alt="zoeken"></a>
+				</li>
+				<li><a href="#"><img src="https://unsplash.it/50/50" alt="account"></a></li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#" >Mijn verhalen</a></li>
+			</ul>
+		</nav>
 	</header>
 	<main>
-		<h2>Log in</h2>
-		<form action="index.html">
-			<fieldset>
-				<legend>Accountgegevens</legend>
-				<label for="input-naam">Accountnaam:</label>
-				<input type="text" id="input-naam" placeholder="accountnaam">
-				<label for="input-wachtwoord">Wachtwoord:</label>
-				<input type="password" id="input-wachtwoord" placeholder="wachtwoord">
-			</fieldset>
-			<input type="submit" value="Log in">
-
-		</form>
-		<a href="register.html">Nog geen account? Registreer</a>
+		<div>
+			<h2>Log in bij De Verhalenwebsite</h2>
+			<hr>
+			<p>Voer je accountnaam en wachtwoord in om in te loggen</p>
+			<form action="index.html">
+					<fieldset>
+						<legend>Accountgegevens</legend>
+						<label for="input-naam">Accountnaam:</label>
+						<input type="text" id="input-naam" required>
+						<label for="input-wachtwoord">Wachtwoord:</label>
+						<input type="password" id="input-wachtwoord" required>
+					</fieldset>
+					<input type="submit" value="Log in">
+			</form>
+			<a href="register.html">Nog geen account? Registreer</a>
+		</div>
 	</main>
 
 </body>

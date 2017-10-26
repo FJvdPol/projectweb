@@ -5,46 +5,64 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Transavia Verhalenwebsite -- Registreer</title>
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
 	<header>
-		<div>
-			<h1>Transavia Verhalenwebsite</h1>
-
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#">Mijn verhalen</a></li>
-					<li><a href="#">Account</a></li>
-				</ul>
-			</nav>
-
-		</div>
-
+		<h1>Verhalen</h1>
+		<nav>
+			<ul>
+				<li>
+					<form action="">
+						<fieldset>
+							<legend>Zoeken</legend>
+							<label for="searchfield">zoeken</label>
+							<input id="searchfield" type="text" placeholder="Zoeken...">
+						</fieldset>
+					</form>
+				</li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">Mijn verhalen</a></li>
+				<li><a href="login.html">Account</a></li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li>
+					<a href=""><img src="https://unsplash.it/50/50" alt="zoeken"></a>
+				</li>
+				<li><a href="login.html"><img src="https://unsplash.it/50/50" alt="account"></a></li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#" >Mijn verhalen</a></li>
+			</ul>
+		</nav>
 	</header>
 	<main>
-		<section>
-			<header>
-				<h2>Registreer account</h2>
-			</header>
+		<div>
+			<h2>Registreer account</h2>
+
 			<form action="index.html">
 				<fieldset>
 					<legend>Accountgegevens</legend>
 					<label for="input-naam">Kies accountnaam:</label>
-					<input type="text" id="input-naam" placeholder="accountnaam">
+					<input type="text" id="input-naam" required pattern="[a-zA-Z]{1,15}">
 					<label for="input-email">Uw E-mailadres:</label>
-					<input type="email" id="input-email" placeholder="uw emailadres">
+					<!-- pattern from http://www.html5-tutorials.org/form-validation/validating-email/ -->
+					<input type="email" id="input-email" placeholder="voorbeeld@mail.nl" required>
 					<label for="input-wachtwoord">Maak wachtwoord:</label>
-					<input type="text" id="input-wachtwoord" placeholder="wachtwoord">
+					<input type="password" id="input-wachtwoord" required>
 					<label for="input-herhaal-wachtwoord">Herhaal wachtwoord:</label>
-					<input type="password" id="input-herhaal-wachtwoord" placeholder="herhaal wachtwoord">
+					<input type="password" id="input-herhaal-wachtwoord" required>
 				</fieldset>
 				<input type="submit" value="Registreer">
 
 			</form>
 			<a href="login.html">Al een account? Log in</a>
-
-		</section>
+		</div>
 
 	</main>
 
