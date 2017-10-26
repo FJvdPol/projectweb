@@ -34,10 +34,12 @@ main article {
     padding: 1rem;
     padding-top: 6rem;
     background-color: #fff;
+    padding-bottom: 10rem;
 }
 @media(min-width: 40rem){
     main article {
-        padding: 4rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
     }
 }
 main article p + h4 {

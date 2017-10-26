@@ -1,6 +1,6 @@
 main {
     background-color: #b5dfe7;
-    max-height: calc(100vh - 3rem);
+    max-height: calc(100vh - 5.75rem);
     overflow: hidden;
 }
 main div {
@@ -24,9 +24,21 @@ main div::after, main div::before {
     bottom: -50%;
     right: -50%;
     animation: float 6s infinite alternate ease-in-out;
+    opacity: 0.75;
+}
+@media(min-width: 52rem){
+    main {
+        max-height: calc(100vh - 3rem);
+    }
+}
+@media(min-width: 48rem){
+    main div::after, main div::before {
+        opacity: 1;
+    }
 }
 main div::before {
     background: url("../images/droom/cloud2.png") no-repeat center;
+    background-size: contain;
     top: -75%;
     bottom: auto;
     left: -75%;

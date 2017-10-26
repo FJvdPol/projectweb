@@ -26,7 +26,7 @@ body>div::after {
     bottom: 0;
     left: 0;
     background-position: center bottom;
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204096%2044%22%20width%3D%224096%22%20height%3D%2244%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M2137%2C0l-76%2C39c-3.653%2C2.164-8.445%2C4-13%2C4s-9.347-1.836-13-4l-76-39H0v45h4096V0H2137z%22%2F%3E%3Cpath%20fill%3D%22transparent%22%20d%3D%22M2137%2C0l-76%2C39c-3.653%2C2.164-8.445%2C4-13%2C4s-9.347-1.836-13-4l-76-39H2137z%22%2F%3E%3C%2Fsvg%3E");
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204096%2044%22%20width%3D%224096%22%20height%3D%2244%22%3E%3Cpath%20fill%3D%22%23f3e5d8%22%20d%3D%22M2137%2C0l-76%2C39c-3.653%2C2.164-8.445%2C4-13%2C4s-9.347-1.836-13-4l-76-39H0v45h4096V0H2137z%22%2F%3E%3Cpath%20fill%3D%22transparent%22%20d%3D%22M2137%2C0l-76%2C39c-3.653%2C2.164-8.445%2C4-13%2C4s-9.347-1.836-13-4l-76-39H2137z%22%2F%3E%3C%2Fsvg%3E");
 }
 
 body>div section {
@@ -47,31 +47,7 @@ body>div section:nth-of-type(2) {
     }
 }
 
-body>div div {
-    max-width: calc(100% - 2rem);
-    margin: 0 auto;
-    display: flex;
-    overflow-y: scroll;
-    padding-bottom: 1rem;
-}
 
-body>div article {
-    margin: 0 1rem;
-    min-width: 15rem;
-    max-width: 15rem;
-}
-
-body>div article:first-of-type {
-    margin-left: 0;
-}
-
-body>div article:last-of-type {
-    margin-right: 0;
-}
-
-body>div article img {
-    width: 100%;
-}
 
 body>div h2 {
     padding: 1rem;
@@ -82,53 +58,65 @@ body>div h2 {
     border-radius: 0.75rem 0.75rem 0 0;
 }
 
-body>div h3 {
-    color: #fff;
-}
-
-main section {
+main section, main > section:first-of-type > div {
     max-width: 90rem;
     margin: 0 auto;
     padding: 4rem 0 6rem;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    align-items: stretch;
 }
-
+main > section:first-of-type {
+    background-color: #f3e5d8;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+main > section + div {
+    content: "";
+    display: block;
+    height: 20rem;
+    width: 100%;
+    background: url("https://unsplash.it/1280/800") no-repeat center;
+    background-size: cover;
+}
 @media (min-width: 52rem) {
-    main section {
+    main > section:first-of-type {
+        padding: 0;
+    }
+    main section, main > section:first-of-type > div {
         padding: 4rem 2rem 6rem;
         padding-top: 6rem;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 2rem;
     }
-    main section>div {
+    main section>div, main > section:first-of-type > div > div {
         grid-column: span 2;
     }
 }
 
 @media (min-width: 77rem) {
-    main section {
+    main section, main > section:first-of-type > div {
         padding: 4rem 2rem 6rem;
         padding-top: 10rem;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 2rem;
     }
-    main section>div {
+    main section>div, main > section:first-of-type > div > div {
         grid-column: span 3;
     }
 }
 
-main section>div {
+main section>div, main > section:first-of-type > div > div{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    padding: 0 1rem;
 }
 
+
 @media (min-width: 52rem) {
-    main section>div {
+    main section>div, main > section:first-of-type > div > div {
         padding: 0;
     }
 }
@@ -165,6 +153,10 @@ main section form fieldset label {
     padding: 0;
     border: 0;
 }
+main section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
 
 main section section {
     padding: 1rem;
@@ -176,16 +168,23 @@ main section article {
     padding-bottom: 7rem;
     display: flex;
     flex-direction: column;
-}
-
-main section article:nth-of-type(even) {
-    background-color: #f7f7f7;
+    padding-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ccc;
+    border-radius: 0.75rem;
+    margin: 2rem 0;
 }
 
 main section article img {
     width: 100%;
+    border-radius: 0.75rem 0.75rem 0 0;
 }
-
+@media(min-width: 48rem){
+    main section article {
+        min-width: 23rem;
+        margin: 0;
+    }
+}
 main section article footer, main section article p, main section article h3, main section article a {
     padding: 0 1.5rem;
 }
@@ -229,18 +228,6 @@ main section article a:visited {
     color: #fff;
 }
 
-@media (min-width: 52rem) {
-    main section article {
-        padding-bottom: 1.5rem;
-        background-color: rgba(255, 255, 255, 0.7);
-        border: 1px solid #ccc;
-        border-radius: 0.75rem;
-        min-width: 23rem;
-    }
-    main section article img {
-        border-radius: 0.75rem 0.75rem 0 0;
-    }
-}
 
 body>footer {
     background-color: #f7f7f7;
