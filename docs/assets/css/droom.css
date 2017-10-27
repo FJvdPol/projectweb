@@ -1,6 +1,22 @@
+header nav:nth-of-type(3) {
+    display: none;
+}
+header > a {
+    display: block;
+    margin-right: 0.5rem;
+}
+@media (min-width: 48rem){
+    header > a {
+        display: none;
+    }
+}
+body {
+    padding-top: 3rem;
+}
+
 main {
     background-color: #b5dfe7;
-    max-height: calc(100vh - 5.75rem);
+    max-height: calc(100vh - 3rem);
     overflow: hidden;
 }
 main div {
@@ -25,11 +41,6 @@ main div::after, main div::before {
     right: -50%;
     animation: float 6s infinite alternate ease-in-out;
     opacity: 0.75;
-}
-@media(min-width: 52rem){
-    main {
-        max-height: calc(100vh - 3rem);
-    }
 }
 @media(min-width: 48rem){
     main div::after, main div::before {

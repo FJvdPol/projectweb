@@ -58,20 +58,17 @@ body>div h2 {
     border-radius: 0.75rem 0.75rem 0 0;
 }
 
-main section, main > section:first-of-type > div {
-    max-width: 90rem;
+main section > div {
+    max-width: 42rem;
+
     margin: 0 auto;
-    padding: 4rem 0 6rem;
+    padding: 4rem 0.5rem 6rem;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: stretch;
 }
-main > section:first-of-type {
-    background-color: #f3e5d8;
-    max-width: 100%;
-    padding: 0 1rem;
-}
+
 main > section + div {
     content: "";
     display: block;
@@ -80,34 +77,34 @@ main > section + div {
     background: url("https://unsplash.it/1280/800") no-repeat center;
     background-size: cover;
 }
-@media (min-width: 52rem) {
-    main > section:first-of-type {
-        padding: 0;
-    }
-    main section, main > section:first-of-type > div {
-        padding: 4rem 2rem 6rem;
-        padding-top: 6rem;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 2rem;
-    }
-    main section>div, main > section:first-of-type > div > div {
-        grid-column: span 2;
+@media (min-width: 40rem){
+    main section > div {
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
-
-@media (min-width: 77rem) {
-    main section, main > section:first-of-type > div {
-        padding: 4rem 2rem 6rem;
-        padding-top: 10rem;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 2rem;
+@media (min-width: 52rem) {
+    main section > div {
+        max-width: 72rem;
+        padding: 4rem 4rem 6rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3rem 1.5rem;
     }
-    main section>div, main > section:first-of-type > div > div {
+    main section>div > div {
+        grid-column: span 2;
+        padding: 0;
+    }
+}
+@media (min-width: 77rem) {
+    main section > div{
+        padding: 4rem 0 6rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    main section>div>div {
         grid-column: span 3;
     }
 }
-
-main section>div, main > section:first-of-type > div > div{
+main section>div>div{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -115,10 +112,12 @@ main section>div, main > section:first-of-type > div > div{
 }
 
 
-@media (min-width: 52rem) {
-    main section>div, main > section:first-of-type > div > div {
-        padding: 0;
-    }
+
+main > section:first-of-type, main > section:last-of-type {
+    background-color: #f3e5d8;
+}
+main > section:first-of-type h2, main > section:last-of-type h2 {
+    color: var(--color-secondary);
 }
 
 main section h2 {
@@ -153,50 +152,54 @@ main section form fieldset label {
     padding: 0;
     border: 0;
 }
-main section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
 
-main section section {
-    padding: 1rem;
-}
 
 main section article {
-    max-width: 43rem;
+    max-width: 23rem;
     justify-self: center;
     padding-bottom: 7rem;
     display: flex;
     flex-direction: column;
     padding-bottom: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid #ccc;
-    border-radius: 0.75rem;
     margin: 2rem 0;
+}
+
+main section:first-of-type article {
+    background-color: transparent;
+    border-color: transparent;
 }
 
 main section article img {
     width: 100%;
-    border-radius: 0.75rem 0.75rem 0 0;
+    border-radius: 0.75rem;
 }
 @media(min-width: 48rem){
     main section article {
         min-width: 23rem;
+        max-width: 100%;
         margin: 0;
     }
 }
-main section article footer, main section article p, main section article h3, main section article a {
+/*main section article footer, main section article p, main section article h3, main section article a {
     padding: 0 1.5rem;
-}
+}*/
 
 main section article p {
     margin-bottom: 1rem;
+    color: #606060;
+}
+main section article h3 {
+    margin-bottom: .25rem;
+    font-size: 1.25rem;
+    color: var(--color-main);
+    line-height: 1.625rem;
+    font-weight: bold;
 }
 
 main section article ul {
     display: flex;
     list-style-type: none;
-    padding: 0 1.5rem;
+    padding: 0;
     justify-content: space-between;
 }
 
@@ -206,22 +209,30 @@ main section article ul li {
 }
 
 main section article a {
-    background-color: var(--color-accent);
-    display: table;
-    margin: 0 auto;
+    margin: 0;
     margin-top: auto;
-    padding: 0.75rem 1.25rem;
-    border-radius: 2rem;
-    color: #fff;
+    padding: .4375em 1.5em .5625em;
+    position: relative;
+    border: 0;
     font-family: var(--font-family-bold);
-    max-width: 80%;
-    transition: all 250ms;
-    box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
+    line-height: 1.5;
+    cursor: pointer;
+    display: table;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: background-color .2s linear;
+    border-radius: 1.25em;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    background-color: var(--color-secondary);
+    color: #fff;
+    box-shadow: inset 0 -0.1875em 0.0625em #120145;
 }
 
-main section article a:hover {
-    color: var(--color-main);
-    background-color: #ff658e;
+main section article a:hover, main section article a:active {
+    background-color: #5e40b8;
 }
 
 main section article a:visited {

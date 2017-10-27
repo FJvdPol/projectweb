@@ -104,7 +104,7 @@ header {
     padding-bottom: 0;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+
     align-content: center;
     min-height: 3rem;
     flex-wrap: wrap;
@@ -171,8 +171,9 @@ header form label+input:focus {
 header h1 {
     font-size: 1.25rem;
     color: var(--color-main);
-    width: calc(100% - 9rem);
+    display: table;
     line-height: 2.875rem;
+    margin-right: auto;
 }
 @media(min-width: 48rem){
     header h1 {
