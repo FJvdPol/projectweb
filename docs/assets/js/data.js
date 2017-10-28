@@ -24,7 +24,7 @@ loadData(url, function(result){
 
 var onLoad = function(data){
     allArticles = document.querySelectorAll("#resultContainer article");
-    allArticles.forEach(article){
+    allArticles.forEach(function(article){
         article.remove();
     }
     Data.all = JSON.parse(data);
