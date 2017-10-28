@@ -17,11 +17,13 @@ function loadData(url, callback) {
 var url = window.location.href.split("/")
 url.pop();
 url = url.join("/") + "/assets/data/data.json";
-loadData(url, onLoad(data));
+loadData(url, function(result){
+    onLoad(result);
+});
 
 
-var onLoad = function(result){
-    Data.all = JSON.parse(result);
+var onLoad = function(data){
+    Data.all = JSON.parse(data);
     console.log(Data.all.stories);
     var articles = [];
     Data.all.stories.forEach(function(story){
