@@ -46,19 +46,22 @@
 			<h2>Log in bij De Verhalenwebsite</h2>
 			<hr>
 			<p>Voer je accountnaam en wachtwoord in om in te loggen</p>
-			<form action="index.html">
+			<form action="index.html" id="login-form">
 					<fieldset>
 						<legend>Accountgegevens</legend>
-						<label for="input-naam">Accountnaam:</label>
-						<input type="text" id="input-naam" required>
-						<label for="input-wachtwoord">Wachtwoord:</label>
-						<input type="password" id="input-wachtwoord" required>
+						<label for="login-input-naam">Accountnaam:</label>
+						<input type="text" id="login-input-naam" required>
+						<p>We konden geen account vinden met deze naam!</p>
+						<label for="login-input-wachtwoord">Wachtwoord:</label>
+						<input type="password" id="login-input-wachtwoord" required>
+						<p>Dit wachtwoord hoort niet bij dit account!</p>
 					</fieldset>
 					<input type="submit" value="Log in">
 			</form>
 			<a href="register.html">Nog geen account? Registreer</a>
 		</div>
 	</main>
-
+	<script src="assets/js/checklogin.js"></script>
+	<script src="assets/js/account.js"></script>
 </body>
 </html>

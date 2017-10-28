@@ -27,6 +27,11 @@ main>div form fieldset input:valid {
     border-color: var(--color-main);
     background-color: #d6ffeb;
 }
+main>div form fieldset input:valid.invalid {
+    border-color: red;
+    background-color: pink;
+    margin-bottom: 0;
+}
 
 main>div form fieldset input:valid:focus {
     border-color: var(--color-secondary);
@@ -44,6 +49,14 @@ main>div form:invalid input[type="submit"] {
 
 main>div form:invalid input[type="submit"]:hover {
     background-color: #ababab;
+}
+main > div form p {
+    display: none;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+main > div form input.invalid + p {
+    display: block;
 }
 
 main div {

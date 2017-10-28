@@ -45,18 +45,21 @@
 		<div>
 			<h2>Registreer account</h2>
 
-			<form action="index.html">
+			<form action="index.html" id="register-form">
 				<fieldset>
 					<legend>Accountgegevens</legend>
-					<label for="input-naam">Kies accountnaam:</label>
-					<input type="text" id="input-naam" required pattern="[a-zA-Z]{1,15}">
-					<label for="input-email">Uw E-mailadres:</label>
+					<label for="register-input-naam">Kies accountnaam:</label>
+					<input type="text" id="register-input-naam" required pattern="[a-zA-Z]{1,15}">
+					<p>Accountnaam al in gebruik! Kies een andere naam.</p>
+					<label for="register-input-email">Uw E-mailadres:</label>
 					<!-- pattern from http://www.html5-tutorials.org/form-validation/validating-email/ -->
-					<input type="email" id="input-email" placeholder="voorbeeld@mail.nl" required>
-					<label for="input-wachtwoord">Maak wachtwoord:</label>
-					<input type="password" id="input-wachtwoord" required>
-					<label for="input-herhaal-wachtwoord">Herhaal wachtwoord:</label>
-					<input type="password" id="input-herhaal-wachtwoord" required>
+					<input type="email" id="register-input-email" placeholder="voorbeeld@mail.nl" required>
+					<p>Emailadres al in gebruik! Kies een ander emailadres.</p>
+					<label for="register-input-wachtwoord">Maak wachtwoord:</label>
+					<input type="password" id="register-input-wachtwoord" required>
+					<label for="register-input-herhaal-wachtwoord">Herhaal wachtwoord:</label>
+					<input type="password" id="register-input-herhaal-wachtwoord" required>
+					<p>Wachtwoorden komen niet overeen!</p>
 				</fieldset>
 				<input type="submit" value="Registreer">
 
@@ -65,6 +68,7 @@
 		</div>
 
 	</main>
-
+	<script src="assets/js/checklogin.js"></script>
+	<script src="assets/js/account.js"></script>
 </body>
 </html>
