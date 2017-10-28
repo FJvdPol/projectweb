@@ -26,7 +26,7 @@ var onLoad = function(data){
     allArticles = document.querySelectorAll("#resultContainer article");
     allArticles.forEach(function(article){
         article.remove();
-    }
+    });
     Data.all = JSON.parse(data);
     console.log(Data.all.stories);
     var articles = [];
