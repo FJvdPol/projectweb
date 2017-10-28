@@ -1,3 +1,6 @@
+var Data = {}
+
+
 function loadData(url, callback) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
@@ -14,6 +17,6 @@ var url = window.location.href.split("/")
 url.pop();
 url = url.join("/") + "/assets/data/data.json";
 loadData(url, function(result){
-    var data = JSON.parse(result);
-    console.log(data);
+    Data.all = JSON.parse(result);
+    console.log(Data.all.stories);
 });
