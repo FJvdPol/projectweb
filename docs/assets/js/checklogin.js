@@ -15,6 +15,10 @@ var welcomeText = document.querySelector("header h1");
 var checkLogin = function(){
     if(Logged){
         account = JSON.parse(localStorage.getItem("curAcc"));
+        if (!account.saved){
+            account.saved = [];
+            localStorage.setItem("curAcc", JSON.stringify(account));
+        }
         accountText.innerText = "Log uit";
         accountIcon.src = accountIcon.src.split("_off.svg").join(".svg");
         if (window.innerWidth > 420){
