@@ -21,23 +21,24 @@ loadData(url, function(result){
     onLoad(result);
 });
 
+var stories;
+var savedStories = [];
 
 var onLoad = function(data){
     Data.all = JSON.parse(data);
     console.log(Data.all.stories);
     allArticles = document.querySelectorAll("#resultContainer article");
+
     if (allArticles){
         allArticles.forEach(function(article){
             article.remove();
         });
     }
 
-    if (!Logged) return false;
-    console.log("passed the login test");
+    if (!Logged){return false;}
 
     var account = JSON.parse(localStorage.getItem("curAcc"));
     if (account.saved){
-        var savedStories = [];
         console.log(Data);
         account.saved.forEach(function(story){
             Data.all.stories.forEach(function(dataStory){
@@ -48,9 +49,14 @@ var onLoad = function(data){
         });
         console.log(savedStories);
     }
+    if (url[url.length - 1] === "mijnverhalen.html"){
+        stories = savedStories;
+    } else if (url[url.length-1] === "index.html"){
+        stories = Data.all.stories;
+    }
 
     var articles = [];
-    Data.all.stories.forEach(function(story){
+    stories.forEach(function(story){
         story.link = story.title.split(" ").join("-").toLowerCase();
         console.log(story.link);
         var html = "<article><img src='"+story.img+"' alt=''><ul><li><button aria-label='Like'></button></li><li><button aria-label='Opslaan' data-story='"+story.title.toLowerCase()+"'></button></li><li><button aria-label='Download verhaal'></button></li></ul><h3>"+story.title+"</h3><p>"+story.summary+"</p><a href='verhalen/"+story.link+".html'>Lees meer van '"+story.title+"'</a></article>";
