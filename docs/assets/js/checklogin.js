@@ -29,13 +29,11 @@ var checkLogin = function(){
         console.log("logged in");
         accountPageLink.addEventListener("click", function(e){
             e.preventDefault();
-            localStorage.setItem("Logged", "false");
-            location.reload();
+            logOut();
         });
         accountText.addEventListener("click", function(e){
             e.preventDefault();
-            localStorage.setItem("Logged", "false");
-            location.reload();
+            logOut();
         });
     } else {
         var newSrc = accountIcon.src.split("icon.svg").join("icon_off.svg");
@@ -44,5 +42,18 @@ var checkLogin = function(){
     }
 }
 checkLogin();
-
+function logOut(){
+    var account = JSON.parse(localStorage.getItem("curAcc"));
+    var allAcc = JSON.parse(localStorage.getItem("Accounts"));
+    console.log("before: ", allAc);
+    allAcc.forEach(function(person){
+        if (person.name === account.name){
+            person = account;
+        }
+    });
+    console.log("after: ", allAcc);
+    localStorage.setItem("Accounts", JSON.stringify(allAcc));
+    localStorage.setItem("Logged", "false");
+    location.reload();
+}
 window.addEventListener("resize", function(){checkLogin();});
