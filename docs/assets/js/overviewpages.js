@@ -53,10 +53,6 @@ var onLoad = function(data){
     }
     if (url === "mijnverhalen.html"){
         updateArticleList(savedStories);
-        if (stories.length > 0){
-            document.querySelector("#resultContainer").classList.add("show");
-            document.querySelector("#emptyState").classList.add("remove");
-        }
     } else if (url === "index.html"){
         updateArticleList(Data.all.stories);
     }
@@ -67,6 +63,11 @@ var onLoad = function(data){
 function updateArticleList(stories) {
     resultContainer.innerHTML = "";
     var articles = [];
+    if (!stories.length > 0){
+        return false;
+    }
+    document.querySelector("#resultContainer").classList.add("show");
+    document.querySelector("#emptyState").classList.add("remove");
     stories.forEach(function(story){
         story.link = story.title.split(" ").join("-").toLowerCase();
         var html = "<article><div><img src='"+story.img+"' alt=''></div><ul><li><button aria-label='Like'></button></li><li><button aria-label='Opslaan' data-story='"+story.title.toLowerCase()+"'></button></li><li><button aria-label='Download verhaal'></button></li></ul><h3>"+story.title+"</h3><p>"+story.summary+"</p><a href='verhalen/"+story.link+".html'>Lees meer van '"+story.title+"'</a></article>";
