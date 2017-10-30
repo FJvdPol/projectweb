@@ -7,8 +7,7 @@ var Search = {
     ],
     submit: document.querySelector("#search-form input[type='submit']"),
     onFormSubmit: function(){
-        Search.values = [Search.input[0].value, Search.input[1].value, Search.input[2].value];
-        console.log(Data.all.stories);
+        updateArticleList(Data.all.stories);
     }
 }
 
