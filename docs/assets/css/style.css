@@ -122,50 +122,8 @@ header {
     }
 }
 
-header form {
-    flex-grow: 1;
-    position: relative;
-    margin-bottom: 0;
-}
-
-header form label {
-    /* Hide content from vision but accesible for screenreader, src: https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/*/
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-}
-
-header form fieldset {
-    padding: 0;
-}
-header form input {
-    border-radius: 0.5rem;
-}
-
-header form fieldset legend {
-    padding: 0;
-    margin: 0;
-    color: transparent;
-    max-height: 0;
-}
-
-header form label+input {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 10rem;
-    margin-bottom: 0;
-    padding: 0.25rem 0.5rem;
-    transition: all 250ms;
-}
-
-header form label+input:focus {
-    width: 20rem;
+header nav:first-of-type img {
+    width: 1.75rem;
 }
 
 header h1 {

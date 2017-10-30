@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Transavia Verhalenwebsite -- Log in</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/zoeken.css">
+</head>
+<body>
+	<header>
+		<h1>Verhalen</h1>
+		<nav>
+			<ul>
+				<li><a href="#"><img src="assets/images/transavia_search_icon.svg" alt="zoeken"></a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="mijnverhalen.html">Mijn verhalen</a></li>
+				<li><a href="#">Account</a></li>
+			</ul>
+		</nav>
+		<nav>
+			<ul>
+				<li>
+					<a href="#"><img src="assets/images/transavia_search_icon.svg" alt="zoeken"></a>
+				</li>
+			</ul>
+	</header>
+	<main>
+		<section>
+			<div>
+				<h2>Zoeken</h2>
+				<hr>
+				<p>Vul je zoekwoord en eventueel filteropties in</p>
+				<form action="index.html" id="search-form">
+						<fieldset>
+							<legend>Zoeken</legend>
+							<label for="search-input-zoekwoord">Zoekwoord:</label>
+							<input type="text" id="search-input-zoekwoord">
+							<label for="search-input-filter-sfeerwoord">Sfeerwoord:</label>
+							<select id="search-input-filter-sfeerwoord">
+								<option value="zweverig">Zweverig</option>
+								<option value="angstig">Angstig</option>
+								<option value="mysterieus">Mysterieus</option>
+							</select>
+							<label for="search-input-filter-kleur">Kleur:</label>
+							<select id="search-input-filter-kleur">
+								<option value="blauw">Blauw</option>
+								<option value="zwart">Zwart-wit</option>
+								<option value="rood">Rood</option>
+							</select>
+						</fieldset>
+						<input type="submit" value="Zoeken">
+				</form>
+				<a href="register.html">Nog geen account? Registreer</a>
+			</div>
+		</section>
+		<section>
+			<h2>Resultaten</h2>
+			<div id="resultContainer"></div>
+		</section>
+	</main>
+	<script src="assets/js/checklogin.js"></script>
+	<script src="assets/js/overviewpages.js"></script>
+	<script src="assets/js/search.js"></script>
+</body>
+</html>

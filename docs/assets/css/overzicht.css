@@ -141,7 +141,6 @@ body>div::after {
 
 main section > div {
     max-width: 42rem;
-
     margin: 0 auto;
     padding: 4rem 0.5rem 6rem;
     display: grid;
