@@ -82,7 +82,7 @@ if (actionButtons){
                         account.saved = [];
                         account.saved.push(this.dataset.story);
                     }
-                    console.log(account.saved);
+                    localStorage.setItem("curAcc", JSON.stringify(account));
                     setTimeout(function(){
                         savedPopup.classList.remove("active");
                     }, 1000);
@@ -92,8 +92,8 @@ if (actionButtons){
                     var index = account.saved.indexOf(this.dataset.story);
                     if (index !== -1) {
                         account.saved.splice(index, 1);
+                        localStorage.setItem("curAcc", JSON.stringify(account));
                     }
-                    console.log(account.saved);
                 }
             });
         } else {
