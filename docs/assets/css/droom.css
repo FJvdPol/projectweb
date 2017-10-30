@@ -19,7 +19,7 @@ main {
     max-height: calc(100vh - 3rem);
     overflow: hidden;
 }
-main div {
+main article div {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -29,7 +29,7 @@ main div {
     position: relative;
     background: url("../images/droom/cloud_bg.png") no-repeat center;
 }
-main div::after, main div::before {
+main article div::after, main article div::before {
     content: "";
     display: block;
     width: 150%;
@@ -43,11 +43,11 @@ main div::after, main div::before {
     opacity: 0.75;
 }
 @media(min-width: 48rem){
-    main div::after, main div::before {
+    main article div::after, main article div::before {
         opacity: 1;
     }
 }
-main div::before {
+main article div::before {
     background: url("../images/droom/cloud2.png") no-repeat center;
     background-size: contain;
     top: -75%;
@@ -56,44 +56,44 @@ main div::before {
     right: auto;
     animation: float 8s infinite alternate ease-in-out;
 }
-main div:nth-of-type(even)::before {
+main article div:nth-of-type(even)::before {
     right: -60%;
     left: auto;
 }
-main div:nth-of-type(even)::after {
+main article div:nth-of-type(even)::after {
     left: -75%;
     right: auto;
 }
 @media (min-width: 40rem){
-    main div::after, main div::before {
+    main article div::after, main article div::before {
         width: 70%;
         height: 70%;
         bottom: -25%;
         right: -25%;
     }
-    main div:nth-of-type(even)::after, main div:nth-of-type(even)::before {
+    main article div:nth-of-type(even)::after, main article div:nth-of-type(even)::before {
         left: -35%;
         right: auto;
     }
 }
 
-main div:first-of-type {
+main article div:first-of-type {
     height: calc(100vh - 3rem);
 }
-main div p {
+main article div p {
     font-size: 1.5em;
     font-family: var(--font-family-bold);
     text-shadow: 0.03em 0.03em #184354;
 }
-main div h2 {
+main article div h2 {
     font-size: 5em;
 }
 @media(min-width: 40em){
-    main div h2 {
+    main article div h2 {
         font-size: 10em;
     }
 }
-main div p, main div h2 {
+main article div p, main article div h2 {
     max-width: 35rem;
     text-align: center;
     color: #fff;
