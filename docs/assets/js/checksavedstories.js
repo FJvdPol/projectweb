@@ -26,7 +26,16 @@ function onLoad(data){
     if (Logged){
         var account = JSON.parse(localStorage.getItem("curAcc"));
         if (account.saved){
+            var savedStories = [];
             console.log(Data);
+            saved.forEach(function(story){
+                Data.all.forEach(function(dataStory){
+                    if (dataStory.title.toLowerCase() === story){
+                        savedStories.push(dataStory);
+                    }
+                });
+            });
+            console.log(savedStories);
         }
     }
 }

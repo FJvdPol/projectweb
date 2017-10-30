@@ -291,11 +291,32 @@ main section article ul li {
     padding: 0.5rem;
     min-width: 2.5rem;
 }
-main section article ul img {
+article ul button {
+    content: "";
+    height: 2rem;
     width: 2rem;
+    appearance: none;
+    background: 0;
+    border: 0;
     border-radius: 0;
     display: block;
     margin: 0 auto;
+    background: url("../images/transavia_like_off.svg") no-repeat center;
+}
+article ul button.active {
+    background-image: url("../images/transavia_like_on.svg");
+}
+article li:nth-of-type(2) button{
+    background-image: url("../images/transavia_saved_off.svg");
+}
+article li:nth-of-type(2) button.active{
+    background-image: url("../images/transavia_saved_on.svg");
+}
+article li:nth-of-type(3) button{
+    background-image: url("../images/transavia_download.svg");
+}
+article li:nth-of-type(3) button.active{
+    background-image: url("../images/transavia_check.svg");
 }
 
 main section article a {
