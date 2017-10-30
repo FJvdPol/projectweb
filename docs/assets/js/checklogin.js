@@ -45,7 +45,7 @@ checkLogin();
 function logOut(){
     var account = JSON.parse(localStorage.getItem("curAcc"));
     var allAcc = JSON.parse(localStorage.getItem("Accounts"));
-    console.log("before: ", allAc);
+    console.log("before: ", allAcc);
     allAcc.forEach(function(person){
         if (person.name === account.name){
             person = account;
