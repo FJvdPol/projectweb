@@ -111,6 +111,13 @@ function articleActionButtons(account){
                             savedPopup.classList.remove("active");
                         }, 3000);
                     } else {
+                        this.classList.remove("active");
+                        account = JSON.parse(localStorage.getItem("curAcc"));
+                        var index = account.saved.indexOf(this.dataset.story);
+                        if (index !== -1) {
+                            account.saved.splice(index, 1);
+                            localStorage.setItem("curAcc", JSON.stringify(account));
+                        }
                         if (url === "mijnverhalen.html") {
                             updateArticleList(getSavedStories());
                             savedPopup.classList.add("active");
@@ -119,13 +126,6 @@ function articleActionButtons(account){
                             }, 3000);
                         } else {
                             savedPopup.classList.remove("active");
-                        }
-                        this.classList.remove("active");
-                        account = JSON.parse(localStorage.getItem("curAcc"));
-                        var index = account.saved.indexOf(this.dataset.story);
-                        if (index !== -1) {
-                            account.saved.splice(index, 1);
-                            localStorage.setItem("curAcc", JSON.stringify(account));
                         }
                     }
                 });
