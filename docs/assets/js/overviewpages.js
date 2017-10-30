@@ -24,6 +24,7 @@ loadData(dataurl, function(result){
 var stories;
 var savedStories = [];
 var url = window.location.href.split("/");
+url = url[url.length - 1];
 
 var onLoad = function(data){
     Data.all = JSON.parse(data);
@@ -50,16 +51,21 @@ var onLoad = function(data){
         });
         console.log("all saved stories: ",savedStories);
     }
-    if (url[url.length - 1] === "mijnverhalen.html"){
-        stories = savedStories;
+    if (url === "mijnverhalen.html"){
+        updateArticleList(savedStories);
         if (stories.length > 0){
             document.querySelector("#resultContainer").classList.add("show");
             document.querySelector("#emptyState").classList.add("remove");
         }
-    } else if (url[url.length-1] === "index.html"){
-        stories = Data.all.stories;
+    } else if (url === "index.html"){
+        updateArticleList(Data.all.stories);
     }
 
+
+}
+
+function updateArticleList(stories) {
+    resultContainer.innerHTML = "";
     var articles = [];
     stories.forEach(function(story){
         story.link = story.title.split(" ").join("-").toLowerCase();
@@ -69,7 +75,6 @@ var onLoad = function(data){
     resultContainer.innerHTML += articles.join(" ");
     articleActionButtons(account);
 }
-
 
 function articleActionButtons(account){
     var savedPopup = document.querySelector("#popup");
@@ -103,6 +108,9 @@ function articleActionButtons(account){
                         if (index !== -1) {
                             account.saved.splice(index, 1);
                             localStorage.setItem("curAcc", JSON.stringify(account));
+                        }
+                        if (url === "mijnverhalen.html") {
+                            updateArticleList(account.saved);
                         }
                     }
                 });
