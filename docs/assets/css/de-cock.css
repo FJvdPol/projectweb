@@ -49,6 +49,9 @@ main article {
     background-color: #fff;
     padding-bottom: 10rem;
 }
+main article p {
+    line-height: 1.25em;
+}
 @media(min-width: 40rem){
     main article {
         padding-left: 4rem;
