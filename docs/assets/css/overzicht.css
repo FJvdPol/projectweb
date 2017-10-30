@@ -5,8 +5,13 @@ body>div {
     justify-content: center;
     min-height: 100vh;
     padding-bottom: 4rem;
-    background: url("../images/link-hoang-31747.jpg") no-repeat center;
+    background: url("../images/link-hoang-31747_small.jpg") no-repeat center;
     background-size: cover;
+}
+@media(min-width: 40rem){
+    body > div {
+        background-image: url("../images/link-hoang-31747.jpg");
+    }
 }
 body > div section {
     max-width: 72rem;
