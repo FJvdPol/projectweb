@@ -53,7 +53,7 @@ var onLoad = function(data){
     if (url[url.length - 1] === "mijnverhalen.html"){
         stories = savedStories;
         if (stories.length > 0){
-            document.querySelector("#emptyState").classList.add("show");
+            document.querySelector("#resultContainer").classList.add("show");
             document.querySelector("#emptyState").classList.add("remove");
         }
     } else if (url[url.length-1] === "index.html"){
