@@ -297,7 +297,7 @@ main > button {
     background: url("../images/transavia_plus.svg") no-repeat center #fff;
     background-size: 75%;
     transition: transform 0.25s;
-
+    cursor: pointer;
 }
 main > button + section {
     display: none;
@@ -332,6 +332,7 @@ main > button + section button {
     text-align: left;
     background: url("../images/transavia_like_off.svg") no-repeat right;
     background-size: 25%;
+    cursor: pointer;
 }
 main > button + section button.active {
     background-image: url("../images/transavia_like_on.svg");
@@ -372,4 +373,9 @@ main> button ~ div:nth-of-type(2).active, #popup.active {
     opacity: 1;
     pointer-events: all;
     transform: translateY(0);
+}
+main> button ~ div:nth-of-type(2) a, #popup a {
+    color: #fff;
+    text-decoration: underline;
+    font-family: var(--font-family-bold);
 }

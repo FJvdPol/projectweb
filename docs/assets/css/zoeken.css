@@ -50,7 +50,7 @@ main > section:nth-of-type(2){
 main > section:nth-of-type(2) > div {
     max-width: 42rem;
     margin: 0 auto;
-    padding: 4rem 0.5rem 6rem;
+    padding: 0rem 0.5rem 6rem;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
@@ -79,7 +79,7 @@ main > section:nth-of-type(2) > div {
 @media (min-width: 52rem) {
     main > section:nth-of-type(2) > div {
         max-width: 72rem;
-        padding: 4rem 4rem 6rem;
+        padding: 0rem 4rem 6rem;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 3rem 1.5rem;
     }
@@ -105,7 +105,7 @@ main > section:first-of-type h2 {
 }
 
 
-main p {
+main > section:first-of-type p {
     margin-top: 2rem;
     color: #606060;
 }
@@ -113,14 +113,12 @@ main p {
 main> section:first-of-type form legend {
     color: transparent;
 }
+main > section:first-of-type form select {
+    margin-bottom: 1.25rem;
+}
 
 main> section:first-of-type form fieldset input {
     transition: border-color 250ms, background-color 250ms;
-}
-
-main> section:first-of-type form fieldset input:valid:focus {
-    border-color: var(--color-secondary);
-    background-color: white;
 }
 
 main> section:first-of-type form input[type="submit"] {

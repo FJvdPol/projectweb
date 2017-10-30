@@ -34,11 +34,10 @@
 #resultContainer.show {
     display: grid;
 }
-main > h2 {
+main > h2, #emptyState {
     padding: 0.5rem;
-}
-#emptyState {
-    padding: 0.5rem;
+    max-width: 72rem;
+    margin: 0 auto;
 }
 #emptyState.remove {
     display: none;
