@@ -22,7 +22,7 @@ loadData(dataurl, function(result){
 });
 
 var stories;
-var savedStories = [];
+
 var url = window.location.href.split("/");
 url = url[url.length - 1];
 
@@ -39,20 +39,9 @@ var onLoad = function(data){
 
     if (!Logged){return false;}
 
-    var account = JSON.parse(localStorage.getItem("curAcc"));
-    if (account.saved){
-        console.log("Data: ",Data);
-        account.saved.forEach(function(story){
-            Data.all.stories.forEach(function(dataStory){
-                if (dataStory.title.toLowerCase() === story){
-                    savedStories.push(dataStory);
-                }
-            });
-        });
-        console.log("all saved stories: ",savedStories);
-    }
+
     if (url === "mijnverhalen.html"){
-        updateArticleList(savedStories);
+        updateArticleList(getSavedStories());
     } else if (url === "index.html"){
         updateArticleList(Data.all.stories);
     }
@@ -60,10 +49,27 @@ var onLoad = function(data){
 
 }
 
+function getSavedStories(){
+    var account = JSON.parse(localStorage.getItem("curAcc"));
+    var savedStories = [];
+    if (account.saved){
+        account.saved.forEach(function(story){
+            Data.all.stories.forEach(function(dataStory){
+                if (dataStory.title.toLowerCase() === story){
+                    savedStories.push(dataStory);
+                }
+            });
+        });
+        return savedStories;
+    }
+    return false;
+}
+
 function updateArticleList(stories) {
+    console.log("updateArticleList: ",stories);
     resultContainer.innerHTML = "";
     var articles = [];
-    if (!stories.length > 0){
+    if (!stories.length > 0 || stories === false){
         return false;
     }
     document.querySelector("#resultContainer").classList.add("show");
@@ -111,7 +117,8 @@ function articleActionButtons(account){
                             localStorage.setItem("curAcc", JSON.stringify(account));
                         }
                         if (url === "mijnverhalen.html") {
-                            updateArticleList(account.saved);
+
+                            updateArticleList(getSavedStories());
                         }
                     }
                 });
