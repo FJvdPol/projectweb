@@ -64,11 +64,11 @@ var onLoad = function(data){
         articles.push(html);
     });
     resultContainer.innerHTML += articles.join(" ");
-    articleActionButtons();
+    articleActionButtons(account);
 }
 
 
-function articleActionButtons(){
+function articleActionButtons(account){
     var savedPopup = document.querySelector("#popup");
     var actionButtons = document.querySelectorAll("main article button");
     if (actionButtons){
@@ -81,7 +81,7 @@ function articleActionButtons(){
                     if (!this.classList.contains("active")){
                         this.classList.add("active");
                         savedPopup.classList.add("active");
-                        var account = JSON.parse(localStorage.getItem("curAcc"));
+                        account = JSON.parse(localStorage.getItem("curAcc"));
                         if(account.saved){
                             account.saved.push(this.dataset.story);
                         } else {
@@ -95,7 +95,7 @@ function articleActionButtons(){
                     } else {
                         this.classList.remove("active");
                         savedPopup.classList.remove("active");
-                        var account = JSON.parse(localStorage.getItem("curAcc"));
+                        account = JSON.parse(localStorage.getItem("curAcc"));
                         var index = account.saved.indexOf(this.dataset.story);
                         if (index !== -1) {
                             account.saved.splice(index, 1);
