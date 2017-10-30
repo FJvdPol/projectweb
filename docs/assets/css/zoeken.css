@@ -97,6 +97,7 @@ main h2 {
     margin: 0 auto 2rem;
     color: var(--color-secondary);
     font-size: 1.5rem;
+    max-width: 72rem;
 }
 main > section:first-of-type h2 {
     max-width: 30rem;
