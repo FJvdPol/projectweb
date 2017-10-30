@@ -10,6 +10,7 @@ function capitalizeFirstLetter(string) {
 
 var accountText = document.querySelector("header nav:first-of-type li:last-of-type a");
 var accountIcon = document.querySelector("header nav:nth-of-type(2) li:last-of-type img");
+var accountPageLink = document.querySelector("header nav:nth-of-type(2) li:last-of-type a");
 var welcomeText = document.querySelector("header h1");
 var checkLogin = function(){
     if(Logged){
@@ -22,11 +23,16 @@ var checkLogin = function(){
             welcomeText.innerText = "Verhalen";
         }
         console.log("logged in");
+        accountPageLink.addEventListener("click", function(e){
+            e.preventDefault();
+            localStorage.setItem("Logged", "false");
+            location.reload();
+        });
         accountText.addEventListener("click", function(e){
             e.preventDefault();
             localStorage.setItem("Logged", "false");
             location.reload();
-        })
+        });
     } else {
         var newSrc = accountIcon.src.split("icon.svg").join("icon_off.svg");
         accountIcon.src = newSrc;
