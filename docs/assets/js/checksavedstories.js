@@ -29,7 +29,7 @@ function onLoad(data){
             var savedStories = [];
             console.log(Data);
             account.saved.forEach(function(story){
-                Data.all.forEach(function(dataStory){
+                Data.all.stories.forEach(function(dataStory){
                     if (dataStory.title.toLowerCase() === story){
                         savedStories.push(dataStory);
                     }
