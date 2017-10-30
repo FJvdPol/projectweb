@@ -23,12 +23,12 @@ loadData(url, function(result){
 
 
 var onLoad = function(data){
+    Data.all = JSON.parse(data);
+    console.log(Data.all.stories);
     allArticles = document.querySelectorAll("#resultContainer article");
     allArticles.forEach(function(article){
         article.remove();
     });
-    Data.all = JSON.parse(data);
-    console.log(Data.all.stories);
     var articles = [];
     Data.all.stories.forEach(function(story){
         story.link = story.title.split(" ").join("-").toLowerCase();
