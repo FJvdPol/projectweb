@@ -54,6 +54,6 @@ function logOut(){
     localStorage.setItem("Accounts", JSON.stringify(allAcc));
     localStorage.setItem("Logged", "false");
     console.log("after: ", allAcc);
-    // location.reload();
+    location.reload();
 }
 window.addEventListener("resize", function(){checkLogin();});
