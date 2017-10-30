@@ -255,6 +255,7 @@ main section article img {
     border-radius: 0.75rem;
     margin-bottom: 1rem;
 }
+
 @media(min-width: 48rem){
     main section article {
         min-width: 23rem;
@@ -287,8 +288,14 @@ main section article ul {
 }
 
 main section article ul li {
-    padding: 1rem 0;
+    padding: 0.5rem;
     min-width: 2.5rem;
+}
+main section article ul img {
+    width: 2rem;
+    border-radius: 0;
+    display: block;
+    margin: 0 auto;
 }
 
 main section article a {

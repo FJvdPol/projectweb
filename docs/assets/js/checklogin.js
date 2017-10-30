@@ -2,9 +2,6 @@ var account = false;
 var Logged;
 if (localStorage.getItem("Logged") === null ) {
     localStorage.setItem("Logged", "false");
-    Logged = false;
-} else {
-    Logged = true;
 }
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);

@@ -22,7 +22,7 @@ loadData(url, function(result){
 });
 
 function onLoad(data){
-    Data.all = data;
+    Data.all = JSON.parse(data);
     if (Logged){
         var account = JSON.parse(localStorage.getItem("curAcc"));
         if (account.saved){
