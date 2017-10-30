@@ -1,3 +1,9 @@
+var backButton = document.querySelector("header li:first-of-type a");
+backButton.addEventListener("click", function(e){
+    e.preventDefault();
+    window.history.back();
+});
+
 var Search = {
     form: document.querySelector("#search-form"),
     inputs: [
@@ -5,13 +11,16 @@ var Search = {
         document.querySelector("#search-input-sfeerwoord"),
         document.querySelector("#search-input-kleur")
     ],
-    submit: document.querySelector("#search-form input[type='submit']"),
+    mobForm: document.querySelector("header form"),
     onFormSubmit: function(){
         updateArticleList(Data.all.stories);
     }
 }
-
-Search.submit.addEventListener("click", function(e){
+Search.mobForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    Search.onFormSubmit();
+})
+Search.form.addEventListener("submit", function(e){
     e.preventDefault();
     Search.onFormSubmit();
 });

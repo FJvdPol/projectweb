@@ -109,6 +109,9 @@ header {
     min-height: 3rem;
     flex-wrap: wrap;
 }
+header > a img {
+    width: 2.5rem;
+}
 
 @media (min-width: 48rem) {
     header {

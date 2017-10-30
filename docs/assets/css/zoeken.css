@@ -1,10 +1,51 @@
+header nav:nth-of-type(2) {
+    width: 100%;
+}
+header nav:nth-of-type(2) li:nth-of-type(2) {
+    flex-grow: 1;
+}
+header form {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+}
+header form fieldset {
+    display: flex;
+    margin: 0;
+    width: 100%;
+}
+header h1 {
+    display: none;
+}
+header form label+input {
+    margin: 0;
+    flex-grow: 1;
+}
+header form label, header form legend, header form input[type="submit"] {
+    /* Hide content from vision but accesible for screenreader, src: https://css-tricks.com/places-its-tempting-to-use-display-none-but-dont/*/
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    color: transparent;
+ }
+
+ body {
+     padding-top: 3rem;
+ }
+
+
 main > section:first-of-type {
     background-color: var(--color-main);
     padding: 6rem 1rem;
+    display: none;
 }
 main > section:nth-of-type(2){
-    padding: 6rem;
-
+    padding: 2rem 1rem;
 }
 main > section:nth-of-type(2) > div {
     max-width: 42rem;
@@ -20,6 +61,20 @@ main > section:nth-of-type(2) > div {
         padding-left: 2rem;
         padding-right: 2rem;
     }
+    main > section:nth-of-type(2){
+        padding: 4rem 1rem;
+    }
+}
+@media(min-width: 48rem){
+    header form{
+        display: none;
+    }
+    main > section:first-of-type  {
+        display: block;
+    }
+    header h1 {
+        display: table;
+    }
 }
 @media (min-width: 52rem) {
     main > section:nth-of-type(2) > div {
@@ -28,6 +83,9 @@ main > section:nth-of-type(2) > div {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 3rem 1.5rem;
     }
+    main > section:nth-of-type(2){
+        padding: 6rem 1rem;
+    }
 }
 @media (min-width: 77rem) {
     main > section:nth-of-type(2) > div{
@@ -35,13 +93,16 @@ main > section:nth-of-type(2) > div {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 main h2 {
-    max-width: 30rem;
     margin: 0 auto 2rem;
     color: var(--color-secondary);
     font-size: 1.5rem;
 }
+main > section:first-of-type h2 {
+    max-width: 30rem;
+
+}
+
 
 main p {
     margin-top: 2rem;

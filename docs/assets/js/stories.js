@@ -1,3 +1,10 @@
+var backButton = document.querySelector("header > a");
+backButton.addEventListener("click", function(e){
+    e.preventDefault();
+    window.history.back();
+});
+
+
 var saveButton = document.querySelector("main > button + section button:nth-of-type(2)");
 var savedPopup = document.querySelector("main > button ~ div:nth-of-type(2)");
 var storyActionButton = document.querySelector("main > button");
