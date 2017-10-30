@@ -44,7 +44,7 @@ if (actionButtons){
                     localStorage.setItem("curAcc", JSON.stringify(account));
                     setTimeout(function(){
                         savedPopup.classList.remove("active");
-                    }, 1000);
+                    }, 3000);
                 } else {
                     this.classList.remove("active");
                     savedPopup.classList.remove("active");

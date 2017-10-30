@@ -67,13 +67,21 @@ function getSavedStories(){
 
 function updateArticleList(stories) {
     console.log("updateArticleList: ",stories);
-    resultContainer.innerHTML = "";
+    var oldArticles = document.querySelectorAll("#resultContainer article");
+    if (oldArticles){
+        oldArticles.forEach(function(article){
+            article.remove();
+        });
+    }
     var articles = [];
+    var emptyState = document.querySelector("#emptyState");
     if (!stories.length > 0 || stories === false){
+        if (emptyState){
+            emptyState.classList.remove("remove");
+        }
         return false;
     }
     document.querySelector("#resultContainer").classList.add("show");
-    var emptyState = document.querySelector("#emptyState");
     if (emptyState){
         emptyState.classList.add("remove");
     }
