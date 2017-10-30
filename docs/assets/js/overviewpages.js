@@ -99,7 +99,7 @@ function articleActionButtons(account){
     var actionButtons = document.querySelectorAll("main article button");
     if (actionButtons){
         actionButtons.forEach(function(button){
-            if (button.dataset.story){
+            if (button.dataset.story && Logged){
                 if (account.saved.indexOf(button.dataset.story.toLowerCase()) > -1) {
                     button.classList.add("active");
                 }
@@ -137,11 +137,17 @@ function articleActionButtons(account){
                         }
                     }
                 });
-            } else {
+            } else if (Logged) {
                 button.addEventListener("click", function(e){
                     e.stopPropagation();
                     e.stopImmediatePropagation();
                     this.classList.toggle("active");
+                });
+            } else {
+                button.addEventListener("click", function(e){
+                    e.stopPropagation();
+                    e.stopImmediatePropagation();
+                    alert("je moet ingelogd zijn om deze functie te gebruiken");
                 });
             }
         });
