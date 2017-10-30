@@ -45,7 +45,6 @@ checkLogin();
 function logOut(){
     var account = JSON.parse(localStorage.getItem("curAcc"));
     var allAcc = JSON.parse(localStorage.getItem("Accounts"));
-    console.log("before: ", allAcc);
     allAcc.forEach(function(person){
         if (person.name === account.name){
             person.saved = account.saved;
@@ -53,7 +52,6 @@ function logOut(){
     });
     localStorage.setItem("Accounts", JSON.stringify(allAcc));
     localStorage.setItem("Logged", "false");
-    console.log("after: ", allAcc);
     location.reload();
 }
 window.addEventListener("resize", function(){checkLogin();});
