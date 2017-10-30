@@ -48,12 +48,12 @@ function logOut(){
     console.log("before: ", allAcc);
     allAcc.forEach(function(person){
         if (person.name === account.name){
-            person = account;
+            person.saved = account.saved;
         }
     });
-    console.log("after: ", allAcc);
     localStorage.setItem("Accounts", JSON.stringify(allAcc));
     localStorage.setItem("Logged", "false");
-    location.reload();
+    console.log("after: ", allAcc);
+    // location.reload();
 }
 window.addEventListener("resize", function(){checkLogin();});
