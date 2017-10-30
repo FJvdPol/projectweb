@@ -37,4 +37,5 @@ var onLoad = function(data){
         articles.push(html);
     });
     resultContainer.innerHTML += articles.join(" ");
+    articleActionButtons();
 }
