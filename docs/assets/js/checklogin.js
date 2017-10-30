@@ -3,6 +3,7 @@ var Logged;
 if (localStorage.getItem("Logged") === null ) {
     localStorage.setItem("Logged", "false");
 }
+Logged = JSON.parse(localStorage.getItem("Logged"));
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
