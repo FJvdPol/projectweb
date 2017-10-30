@@ -2,7 +2,7 @@
     max-width: 42rem;
     margin: 0 auto;
     padding: 4rem 0.5rem 6rem;
-    display: grid;
+    display: none;
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: stretch;
@@ -30,6 +30,15 @@
         padding: 4rem 0 6rem;
         grid-template-columns: repeat(3, 1fr);
     }
+}
+#resultContainer.show {
+    display: grid;
+}
+main > h2 {
+    padding: 0.5rem;
+}
+#emptyState {
+    padding: 0.5rem;
 }
 #emptyState.remove {
     display: none;
