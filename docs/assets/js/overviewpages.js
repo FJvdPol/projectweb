@@ -14,15 +14,16 @@ function loadData(url, callback) {
     rawFile.send(null);
 }
 
-var url = window.location.href.split("/")
-url.pop();
-url = url.join("/") + "/assets/data/data.json";
-loadData(url, function(result){
+var dataurl = window.location.href.split("/");
+dataurl.pop();
+dataurl = dataurl.join("/") + "/assets/data/data.json";
+loadData(dataurl, function(result){
     onLoad(result);
 });
 
 var stories;
 var savedStories = [];
+var url = window.location.href.split("/");
 
 var onLoad = function(data){
     Data.all = JSON.parse(data);
