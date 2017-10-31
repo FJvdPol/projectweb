@@ -82,8 +82,6 @@ main article div:first-of-type {
 }
 main article div p {
     font-size: 1.5em;
-    font-family: var(--font-family-bold);
-    text-shadow: 0.03em 0.03em #184354;
 }
 main article div h2 {
     font-size: 5em;
@@ -94,7 +92,9 @@ main article div h2 {
     }
 }
 main article div p, main article div h2 {
+    font-family: "Gochi Hand", cursive;
     max-width: 35rem;
     text-align: center;
     color: #fff;
+    text-shadow: 0.03em 0.03em #184354;
 }
