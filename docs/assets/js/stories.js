@@ -36,8 +36,8 @@ if (actionButtons){
     var account = JSON.parse(localStorage.getItem("curAcc"));
     actionButtons.forEach(function(button){
         if (button === saveButton){
-            if (account.saved.indexOf(this.dataset.story) > -1) {
-                this.classList.add("active");
+            if (account.saved.indexOf(button.dataset.story) > -1) {
+                button.classList.add("active");
             }
             button.addEventListener("click", function(e){
                 e.stopPropagation();
