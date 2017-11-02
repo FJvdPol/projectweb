@@ -133,7 +133,7 @@ header h1 {
     font-size: 1.25rem;
     color: var(--color-main);
     display: table;
-    line-height: 2.875rem;
+    line-height: 2.5rem;
     margin-right: auto;
 }
 @media(min-width: 48rem){
@@ -161,6 +161,7 @@ header nav ul li {
 
 header nav ul li a {
     font-size: 1.25rem;
+    line-height: 1.5;
     font-family: var(--font-family-bold);
     color: var(--color-main);
 }
