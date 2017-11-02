@@ -45,6 +45,7 @@ if (actionButtons){
                 if (!this.classList.contains("active")){
                     this.classList.add("active");
                     savedPopup.classList.add("active");
+                    this.innerText = "Opgeslagen";
                     if(account.saved){
                         account.saved.push(this.dataset.story);
                     } else {
@@ -58,6 +59,7 @@ if (actionButtons){
                 } else {
                     this.classList.remove("active");
                     savedPopup.classList.remove("active");
+                    this.innerText = "Opslaan";
                     var index = account.saved.indexOf(this.dataset.story);
                     if (index !== -1) {
                         account.saved.splice(index, 1);
