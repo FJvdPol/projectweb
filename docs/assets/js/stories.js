@@ -6,7 +6,7 @@ backButton.addEventListener("click", function(e){
 
 
 var saveButton = document.querySelector("main > button + section button:nth-of-type(2)");
-var savedPopup = document.querySelector("main > button ~ div:nth-of-type(2)");
+var savedPopup = document.querySelector("#popup");
 var storyActionButton = document.querySelector("main > button");
 var storyActionSection = document.querySelector("main > button + section");
 function switchActionButtonState(){
@@ -36,6 +36,9 @@ if (actionButtons){
     var account = JSON.parse(localStorage.getItem("curAcc"));
     actionButtons.forEach(function(button){
         if (button === saveButton){
+            if (account.saved.indexOf(this.dataset.story) > -1) {
+                this.classList.add("active");
+            }
             button.addEventListener("click", function(e){
                 e.stopPropagation();
                 e.stopImmediatePropagation();
