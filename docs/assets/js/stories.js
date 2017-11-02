@@ -17,7 +17,7 @@ function switchActionButtonState(){
         storyActionButton.setAttribute("aria-label", "open acties");
     } else {
         storyActionSection.classList.add("active");
-        TweenLite.to(storyActionSection, 1, {maxWidth: "100%", maxHeight: "100%", ease: Power1.easeOut, autoKill: true});
+        TweenLite.to(storyActionSection, 1, {maxWidth: "100%", maxHeight: "100%", ease: Power1.easeOut});
         storyActionButton.style.transform = "rotate(-45deg)";
         storyActionButton.setAttribute("aria-label", "sluit acties");
     }
