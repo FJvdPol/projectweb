@@ -17,7 +17,7 @@ function switchActionButtonState(){
         storyActionButton.setAttribute("aria-label", "open acties");
     } else {
         storyActionSection.classList.add("active");
-        TweenLite.to(storyActionSection, 1, {maxWidth: "100%", maxHeight: "100%", ease: Power1.easeOut});
+        TweenLite.to(storyActionSection, 1, {maxWidth: "100%", maxHeight: "100%", ease: Power1.easeOut, autoKill: true});
         storyActionButton.style.transform = "rotate(-45deg)";
         storyActionButton.setAttribute("aria-label", "sluit acties");
     }
@@ -38,6 +38,7 @@ if (actionButtons){
         if (button === saveButton){
             if (account.saved.indexOf(button.dataset.story) > -1) {
                 button.classList.add("active");
+                button.innerText = "Opgeslagen";
             }
             button.addEventListener("click", function(e){
                 e.stopPropagation();
