@@ -5,7 +5,7 @@ var xPos;
 var yPos;
 
 if (window.innerWidth < 768){
-    document.querySelector("main").addEventListener("touchstart", function(e){
+    document.querySelector("main").addEventListener("click", function(e){
         checkMousePos(e);
     });
 } else {
